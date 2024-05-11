@@ -31,6 +31,11 @@ El proyecto está estructurado de la siguiente manera:
 ## Funcionalidades
 
 - Permite seleccionar un municipio de Málaga desde un menú desplegable en una interfaz web.
+- ![1](https://github.com/yadelisgv/Web-Scraping-con-Selenium-Python/assets/40398052/1b599202-8d11-4ac7-b093-4a64a0bf09fb)
+
 - Abre una ventana de Google Chrome de forma automática para navegar por la página de Idealista correspondiente al municipio seleccionado.
+- ![2](https://github.com/yadelisgv/Web-Scraping-con-Selenium-Python/assets/40398052/e02fe86c-c19e-4ec4-a3bb-6c6ec21e7759)
+
 - Extrae información detallada de los primeros 6 inmuebles en venta, incluyendo título, ubicación, precio, características básicas, características adicionales y ubicación detallada.
 - Muestra los datos extraídos en una tabla en la interfaz web.
+- ![4](https://github.com/yadelisgv/Web-Scraping-con-Selenium-Python/assets/40398052/ae5c97d6-1d4d-47c7-b31f-8b3d652ab53c)
