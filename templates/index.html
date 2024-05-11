@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping de Idealista</title>
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css">
+    <!--GOOGLE FONTS LOBSTER-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!--MAIN CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="display-4 text-center title mt-3">Web Scraping de Idealista</h2>
+        <br></br>
+        <div class="row">
+            <div class="col-3">
+                <form action="/" method="POST">
+                    <h5 class="card-title">Municipios de Málaga</h5>
+                    <select class="form-select" aria-label="Default select example" name="municipio">
+                        <option selected>sin seleccionar</option>
+                        <option value="malaga">Málaga</option>
+                        <option value="marbella">Marbella</option>
+                        <option value="fuengirola">Fuengirola</option>
+                        <option value="torremolinos">Torremolinos</option>
+                        <option value="benalmadena">Benalmádena</option>
+                        <option value="estepona">Estepona</option>
+                        <option value="mijas">Mijas</option>
+                        <option value="ronda">Ronda</option>
+                        <option value="velez-malaga">Vélez-Málaga</option>
+                        <option value="antequera">Antequera</option>
+                        <option value="nerja">Nerja</option>
+                        <option value="alhaurin-de-la-torre">Alhaurín de la Torre</option>
+                        <option value="manilva">Manilva</option>
+                        <option value="coin">Coín</option>
+                        <option value="alora">Álora</option>
+                        <option value="torrox">Torrox</option>
+                        <option value="casares">Casares</option>
+                        <option value="archidona">Archidona</option>
+                        <option value="monda">Monda</option>
+                        <option value="cartama">Cártama</option>
+                    </select>
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="col-9">
+                    <!--Table Requirements1-->
+                    <table class="table table-bordered">
+                        <thead>
+                            <th scope="col">titulo</th>
+                            <th scope="col">localizacion</th>
+                            <th scope="col">precio</th>
+                            <th scope="col">ctas_basicas</th>
+                            <th scope="col">ctas_extra</th>
+                            <th scope="col">ubicacion_desg</th>
+                        </thead>
+                        <tbody>
+                            {% if data %}
+                                {% for d in data %}
+                                    <tr>
+                                        <td>{{ d.titulo }}</td>
+                                        <td>{{ d.localizacion }}</td>
+                                        <td>{{ d.precio }}</td>
+                                        <td>{{ d.ctas_basicas }}</td>
+                                        <td>{{ d.ctas_extra }}</td>
+                                        <td>{{ d.ubicacion_desg }}</td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
